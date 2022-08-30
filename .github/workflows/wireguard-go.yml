@@ -1,5 +1,11 @@
 name: Build WireGuard-Go
-on: workflow_dispatch #手动触发工作流
+on: 
+  workflow_dispatch: #手动触发工作流
+   inputs:
+    tag:
+        description: '请填写仓库标签（通常标签为版本号）'
+        required: true
+        type: string
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,8 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: master
-          release_name: Release master
+          tag_name: ${{ inputs.tag }}
+          release_name: ${{ inputs.tag }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
