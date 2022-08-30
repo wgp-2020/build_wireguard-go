@@ -10,7 +10,7 @@ jobs:
          repository: 'WireGuard/wireguard-go'
          ref: 'master'
       - name: 设置go环境
-      - uses: actions/setup-go@v3
+        uses: actions/setup-go@v3
         with:
           go-version-file: 'go.mod' #提取go版本
       - name: 编译WireGuard-Go
