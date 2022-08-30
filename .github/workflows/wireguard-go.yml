@@ -4,6 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: WireGuard/wireguard-go@master #使用目标仓库
       - uses: actions/setup-go@v3
         with:
