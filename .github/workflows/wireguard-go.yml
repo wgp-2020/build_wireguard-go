@@ -14,7 +14,7 @@ jobs:
         with:
           go-version-file: 'go.mod' #提取go版本
       - name: 编译WireGuard-Go
-        run: go build -o wireguard-go -v ./...
+        run: go build -v -o "wireguard-go"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
