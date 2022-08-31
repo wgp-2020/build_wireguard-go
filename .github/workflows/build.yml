@@ -13,8 +13,8 @@ jobs:
       - name: 签出目标仓库
         uses: actions/checkout@v3
         with:
-         repository: 'WireGuard/wireguard-go'
-         ref: '@${{ steps.create_release.outputs.upload_url }}'
+         repository: WireGuard/wireguard-go
+         ref: ${{ inputs.tag }}
       - name: 设置go环境
         uses: actions/setup-go@v3
         with:
